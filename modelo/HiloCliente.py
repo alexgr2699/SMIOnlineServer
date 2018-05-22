@@ -41,31 +41,26 @@ class HiloCliente(Thread):
 					datos.online = False
 					self.root[self.nick] = datos
 					transaction.commit()
-					self.enviar_historial_contactos(self.nick, self.root[self.nick].lista_contactos)
+					self.enviar_historial_contactos(self.nick, self.root[self.nick].lista_contactos, False)
 				break;
 			else:
 				self.manejador_codigos_paquete[input_data.codigo](input_data)
 
-	def enviar_historial_contactos(self, usuario, contactos):
-		for hilo in self.hilos_conexiones:
-			if hilo.is_alive() is True and hilo.nick != self.nick:
-				for contacto in contactos:
-					if hilo.nick == contacto.nick:
-						try:
-							lista_contactos = hilo.root[contacto.nick].lista_contactos
-							iterador = 0
-							for lista in lista_contactos:
-								if lista.nick == usuario:
-									lista_contactos[iterador].estado = False
-									print(lista_contactos[iterador])
-									hilo.root[contacto.nick].lista_contactos = lista_contactos
-									transaction.commit()
-									hilo.enviar_historial()
-									break
-								iterador = iterador+1
-						except Exception as e:
-							raise
-
+	def enviar_historial_contactos(self, usuario, contactos, estado):
+		for contacto in contactos:
+			lista_contactos = self.root[contacto.nick].lista_contactos
+			iterador = 0
+			for lista in lista_contactos:
+				if lista.nick == usuario:
+					lista_contactos[iterador].estado = estado
+					self.root[contacto.nick].lista_contactos = lista_contactos
+					transaction.commit()
+					break
+				iterador = iterador + 1
+			for hilo in self.hilos_conexiones:
+				if hilo.is_alive() is True and hilo.nick == contacto.nick:
+					hilo.enviar_historial()
+					
 	def realizar_conexion(self, paquete_recibido):
 		''' funcion encargada '''
 		self.nick = paquete_recibido.nick
@@ -83,13 +78,14 @@ class HiloCliente(Thread):
 
 		paquete_sesion = PaqueteRespuesta(respuesta, REF_INICIO_SESION)
 		paquete_sesion = pickle.dumps(paquete_sesion)
+
 		self.conn.send(paquete_sesion)
 
 		if respuesta is True:
 			self.root[self.nick].online = True
 			transaction.commit()
 			self.enviar_historial()
-			self.enviar_historial_contactos(self.nick, self.root[self.nick].lista_contactos)			
+			self.enviar_historial_contactos(self.nick, self.root[self.nick].lista_contactos, True)
 
 	def realizar_test(self, paquete_recibido):
 		''' '''
@@ -101,7 +97,7 @@ class HiloCliente(Thread):
 		print(self.root[self.nick])
 		paquete_historial = PaqueteHistorial(self.root[self.nick])
 		paquete_historial = pickle.dumps(paquete_historial)
-		self.conn.send(paquete_historial)
+		self.conn.sendall(paquete_historial)
 
 	def enviar_mensaje(self, paquete_recibido):
 		''' '''

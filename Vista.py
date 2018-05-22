@@ -117,7 +117,7 @@ class Notificacion(Thread):
 
     def mostrar_error_conexion(self, extra):
         ''' '''
-        Vista.imprimir("\n### Error de conexión ###")
+        Vista.imprimir("\n### Error: Puerto ya utilizado ###")
         Notificacion.mostrar_fin_programa()
 
     @staticmethod

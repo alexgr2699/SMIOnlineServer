@@ -21,6 +21,8 @@ class Servidor(Thread):
     def run(self):
         ''' '''
         self.stream = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.stream.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
         try:
             self.stream.bind(self.datos_servidor)
         except OSError as e:
