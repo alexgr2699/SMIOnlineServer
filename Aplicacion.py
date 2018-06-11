@@ -1,34 +1,20 @@
-from Vista import *
-from Controlador import *
-from ZODB import DB, FileStorage
-
-import threading
-import time
-import transaction
+from VistaTk import Vista
+from Controlador import Controlador
 
 class AplicacionServidor:
-    ''' '''
+    ''' Clase que se encarga de iniciar el programa '''
     def __init__(self):
-        ''' '''
+        ''' inicializador que crea la lista de conexiones'''
         self.hilos_conexiones = []
 
-    @staticmethod
-    def salir():
-        ''' '''
+    def salir(self):
+        ''' Metodo para cerrar el programa '''
         exit()
 
     def iniciar(self):
-        ''' '''
-        self.iniciarBD()
-        self.controlador = Controlador(self.hilos_conexiones, self.bd, self.conexion, self.root)
-        self.controlador.iniciar_vista()
-
-    def iniciarBD(self):
-        ''' '''
-        self.almacenamiento = FileStorage.FileStorage('SMIOnlineDATA.fs')
-        self.bd = DB(self.almacenamiento)
-        self.conexion = self.bd.open()
-        self.root = self.conexion.root()
+        ''' Método que crea el controlador e inicia la vista '''
+        self.controlador = Controlador(self.hilos_conexiones, self.salir)
+        self.controlador.iniciar()
 
 if __name__ == "__main__":
     app = AplicacionServidor()

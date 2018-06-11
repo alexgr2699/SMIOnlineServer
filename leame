@@ -1,0 +1,16 @@
+1) Requisitos
+	1.1) Tener instalado python3
+	1.2) Tener instalado el modulo ZODB (Para instalar el modulo debe instalarse primero pip3)
+	1.3) El puerto 6030 no debe estar ocupado
+
+2) Instalación
+	2.1) Python3: (Linux) sudo apt-get install python3
+	2.1) pip3: (Linux) sudo apt-get install python3-pip
+	2.2) Modulo ZODB: (Linux) pip3 install ZODB
+
+3) Uso
+	Para iniciar la aplicación debe ejecutarse el script Aplicacion.py en la terminal de la siguiente forma
+		=>	$ python3 Aplicacion.py
+
+	Al iniciar la aplicación, el servidor se podrá a la escucha de conexiones entrantes en el puerto 6030,
+	tambien creará o abrirá la base de datos llamada SMIOnlineDATA.fs ubicada en el directorio superior

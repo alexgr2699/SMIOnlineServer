@@ -1,0 +1,32 @@
+
+2018-06-09 09:31:32.359780 # Conexión realizada exitosamente !!!
+2018-06-09 09:31:32.460369 # Puerto en escucha: 6030
+
+2018-06-09 09:46:35.471028 # Test de conexión - Dir: ('192.168.1.4', 49957)
+2018-06-09 09:46:35.472278 # ('192.168.1.4', 49957) se ha desconectado
+2018-06-09 09:53:11.142822 # Error en el registro: sigmar
+2018-06-09 09:53:11.148656 # ('192.168.1.4', 49991) se ha desconectado
+2018-06-09 09:53:23.338839 # Paquete Registro:
+Nombre y Apellido: renne luciano Junchaya
+Sexo: Masculino
+Fecha de nacimiento: 14/08/2008
+Nombre de usuario: sigmar
+Online: False
+2018-06-09 09:53:23.343561 # ('192.168.1.4', 49992) se ha desconectado
+2018-06-09 09:54:41.366142 # Error en inicio de sesión: sigmar
+2018-06-09 09:54:41.370589 # ('192.168.1.4', 49998) se ha desconectado
+2018-06-09 09:54:53.242994 # Error en inicio de sesión: sigmar
+2018-06-09 09:54:53.246942 # ('192.168.1.4', 50000) se ha desconectado
+2018-06-09 09:55:11.161133 # Error en inicio de sesión: sigmar
+2018-06-09 09:55:11.165742 # ('192.168.1.4', 50001) se ha desconectado
+2018-06-09 09:56:08.696399 # Test de conexión - Dir: ('127.0.0.1', 32792)
+2018-06-09 09:56:08.697290 # ('127.0.0.1', 32792) se ha desconectado
+2018-06-09 09:56:14.207131 # ('127.0.0.1', 32794) se ha conectado.
+2018-06-09 09:57:35.648593 # ('192.168.1.4', 50019) se ha conectado.
+2018-06-09 09:58:17.015187 # ('192.168.1.4', 50019) se ha desconectado
+2018-06-09 09:58:23.879477 # Test de conexión - Dir: ('192.168.1.4', 50022)
+2018-06-09 09:58:23.879995 # ('192.168.1.4', 50022) se ha desconectado
+2018-06-09 09:58:44.667922 # ('192.168.1.4', 50023) se ha conectado.
+2018-06-09 09:58:51.422374 # Agregar contacto: gino_junchaya
+2018-06-09 09:59:07.601351 # ('192.168.1.4', 50023) se ha desconectado
+2018-06-09 10:20:01.466847 # ('127.0.0.1', 32794) se ha desconectado
