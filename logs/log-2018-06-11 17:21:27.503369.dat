@@ -1,0 +1,100 @@
+
+2018-06-11 17:06:21.745539 # Conexión realizada exitosamente !!!
+2018-06-11 17:06:21.746618 # Puerto en escucha: 6030
+
+2018-06-11 17:06:28.207912 # Test de conexión - Dir: ('127.0.0.1', 49910)
+2018-06-11 17:06:28.208460 # ('127.0.0.1', 49910) se ha desconectado
+2018-06-11 17:07:56.614392 # Test de conexión - Dir: ('127.0.0.1', 49916)
+2018-06-11 17:07:56.615018 # ('127.0.0.1', 49916) se ha desconectado
+2018-06-11 17:09:27.156447 # Error en el registro: alejasilvae_
+2018-06-11 17:09:27.157236 # ('127.0.0.1', 49918) se ha desconectado
+2018-06-11 17:09:41.556991 # Error en el registro: alejasilvae_
+2018-06-11 17:09:41.557839 # ('127.0.0.1', 49920) se ha desconectado
+2018-06-11 17:09:51.957375 # Error en el registro: alejasilvae_
+2018-06-11 17:09:51.958191 # ('127.0.0.1', 49922) se ha desconectado
+2018-06-11 17:10:11.654602 # Error en el registro: alejasilvae_
+2018-06-11 17:10:11.655233 # ('127.0.0.1', 49928) se ha desconectado
+2018-06-11 17:10:34.394548 # Paquete Registro:
+Nombre y Apellido: Ale Silva 
+Sexo: Femenino
+Fecha de nacimiento: 10/06/1997
+Nombre de usuario: alejasilvae_
+Online: False
+2018-06-11 17:10:34.395323 # ('127.0.0.1', 49948) se ha desconectado
+2018-06-11 17:10:54.321919 # ('127.0.0.1', 49950) se ha conectado.
+2018-06-11 17:11:05.305505 # ('127.0.0.1', 49950) se ha desconectado
+2018-06-11 17:11:13.584266 # Test de conexión - Dir: ('127.0.0.1', 49952)
+2018-06-11 17:11:13.584857 # ('127.0.0.1', 49952) se ha desconectado
+2018-06-11 17:11:33.937226 # Paquete Registro:
+Nombre y Apellido: Gino Junchaya
+Sexo: Masculino
+Fecha de nacimiento: 21/02/1997
+Nombre de usuario: gino_junchaya
+Online: False
+2018-06-11 17:11:33.941281 # ('127.0.0.1', 49954) se ha desconectado
+2018-06-11 17:11:43.266560 # ('127.0.0.1', 49964) se ha conectado.
+2018-06-11 17:12:05.311652 # Agregar contacto: alejasilvae_
+2018-06-11 17:12:07.414289 # Agregar contacto: alejasilvae_
+2018-06-11 17:12:09.462911 # Agregar contacto: alejasilvae_
+2018-06-11 17:12:13.161634 # Paquete de Mensaje recibido
+2018-06-11 17:12:18.495699 # Paquete de Mensaje recibido
+2018-06-11 17:12:18.792270 # Paquete de Mensaje recibido
+2018-06-11 17:12:18.946333 # Paquete de Mensaje recibido
+2018-06-11 17:12:19.105265 # Paquete de Mensaje recibido
+2018-06-11 17:12:21.831535 # Paquete de Mensaje recibido
+2018-06-11 17:12:40.358594 # ('127.0.0.1', 49964) se ha desconectado
+2018-06-11 17:12:46.744370 # Test de conexión - Dir: ('127.0.0.1', 49966)
+2018-06-11 17:12:46.744955 # ('127.0.0.1', 49966) se ha desconectado
+2018-06-11 17:13:51.516896 # Paquete Registro:
+Nombre y Apellido: Ale Espinola
+Sexo: Femenino
+Fecha de nacimiento: 10/06/1997
+Nombre de usuario: alespinola
+Online: False
+2018-06-11 17:13:51.518139 # ('127.0.0.1', 49968) se ha desconectado
+2018-06-11 17:14:38.156446 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:14:38.158331 # ('127.0.0.1', 49986) se ha desconectado
+2018-06-11 17:14:41.582035 # ('127.0.0.1', 49988) se ha conectado.
+2018-06-11 17:16:06.037503 # Agregar contacto: gino_junchaya
+2018-06-11 17:16:25.559181 # Paquete de Mensaje recibido
+2018-06-11 17:16:29.456954 # Paquete de Mensaje recibido
+2018-06-11 17:16:29.796593 # Paquete de Mensaje recibido
+2018-06-11 17:16:29.936502 # Paquete de Mensaje recibido
+2018-06-11 17:16:30.051023 # Paquete de Mensaje recibido
+2018-06-11 17:16:30.168974 # Paquete de Mensaje recibido
+2018-06-11 17:16:30.390087 # Paquete de Mensaje recibido
+2018-06-11 17:16:30.504466 # Paquete de Mensaje recibido
+2018-06-11 17:16:30.584462 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.051695 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.553976 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.604250 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.702131 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.775708 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.875577 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.935926 # Paquete de Mensaje recibido
+2018-06-11 17:16:32.997271 # Paquete de Mensaje recibido
+2018-06-11 17:16:33.144926 # ('127.0.0.1', 49988) se ha desconectado
+2018-06-11 17:18:16.514336 # Test de conexión - Dir: ('127.0.0.1', 49998)
+2018-06-11 17:18:16.514757 # ('127.0.0.1', 49998) se ha desconectado
+2018-06-11 17:18:19.801285 # Error en inicio de sesión: gino_hu
+2018-06-11 17:18:19.805190 # ('127.0.0.1', 50000) se ha desconectado
+2018-06-11 17:18:24.586437 # ('127.0.0.1', 50002) se ha conectado.
+2018-06-11 17:19:03.929503 # ('127.0.0.1', 50002) se ha desconectado
+2018-06-11 17:19:55.051488 # Test de conexión - Dir: ('127.0.0.1', 50038)
+2018-06-11 17:19:55.051955 # ('127.0.0.1', 50038) se ha desconectado
+2018-06-11 17:20:02.485184 # ('127.0.0.1', 50040) se ha conectado.
+2018-06-11 17:20:09.778545 # ('127.0.0.1', 50040) se ha desconectado
+2018-06-11 17:20:13.986353 # Test de conexión - Dir: ('127.0.0.1', 50042)
+2018-06-11 17:20:13.986869 # ('127.0.0.1', 50042) se ha desconectado
+2018-06-11 17:20:22.072497 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:20:22.075545 # ('127.0.0.1', 50044) se ha desconectado
+2018-06-11 17:20:31.416232 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:20:31.420574 # ('127.0.0.1', 50046) se ha desconectado
+2018-06-11 17:20:36.743706 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:20:36.746042 # ('127.0.0.1', 50048) se ha desconectado
+2018-06-11 17:20:41.562456 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:20:41.564376 # ('127.0.0.1', 50050) se ha desconectado
+2018-06-11 17:20:46.516503 # Error en inicio de sesión: alejasilvae_
+2018-06-11 17:20:46.519452 # ('127.0.0.1', 50052) se ha desconectado
+2018-06-11 17:20:48.293558 # ('127.0.0.1', 50054) se ha conectado.
+2018-06-11 17:20:52.956418 # ('127.0.0.1', 50054) se ha desconectado

@@ -60,6 +60,9 @@ class Modelo:
 			return False
 
 	def verificar_campos(self, usuario):
+		''' Funcion que valida los datos del usuario que no esten vacios
+			y que el formato de fecha sea valido
+		'''
 		if not(usuario.nick and usuario.nick.strip()):
 		  return False
 		if not(usuario.password and usuario.password.strip()):
@@ -75,6 +78,7 @@ class Modelo:
 		return True
 
 	def validar_campo_fecha(self, fecha):
+		''' Funcion que valida un campo de fecha dd/mm/aaaa '''
 		try:
 			datetime.strptime(fecha, "%d/%m/%Y")
 		except ValueError:
@@ -96,6 +100,12 @@ class Modelo:
 		else:
 			lista_contactos = self.root[nick_usuario].lista_contactos
 			contacto.estado = self.root[contacto.nick].online
+
+			for i in lista_contactos:
+				if i.nick == contacto.nick:
+					# El contacto ya existe
+					return False
+
 			lista_contactos.append(contacto)
 			self.root[nick_usuario].lista_contactos = lista_contactos
 			transaction.commit()

@@ -7,11 +7,15 @@ import tkinter.scrolledtext as tkst
 import tkinter.messagebox as tkmsgbox
 
 class Vista:
+	''' Clase que representa a la vista en tkinter '''
 	def __init__(self, controlador):
 		self.Controlador = controlador
 
 	def iniciar(self):
-
+		''' Funcion que crea la ventana con el titulo SMIOnline | v1.0, dibuja
+		 	el TextoScroll que corresponde al log del servidor, posteriormente
+			inicia las comunicaciones con el notificador e inicia el servidor
+		'''
 		self.ventana_principal = Ventana('Servidor SMIOnline | v1.0', self.Controlador)
 		self.mostrar_ventana_principal(self.ventana_principal.ventana)
 
@@ -23,6 +27,9 @@ class Vista:
 		self.ventana_principal.invocar()
 
 	def mostrar_ventana_principal(self, principal):
+		''' Funcion que dibuja los widgets correspondientes a la unica ventana
+			del servidor, el log y botones de accion
+		'''
 		self.etiqueta1 = Etiqueta(ventana=principal,
 								 nombre="Servidor SMIOnline", color= "black",
 								fuente='Ubuntu', tamano=20)
@@ -45,12 +52,18 @@ class Vista:
 		boton2.invocar_pack(posicion="derecha")
 
 	def evento_guardar_log(self):
+		''' Funcion que guarda el log actual que se encuentra en la pantalla
+			en la carpeta logs y con el nombre log seguido de la fecha y hora
+			en la que se hizo la accion, en formato .dat
+		'''
 		nombre_archivo = "logs/log-" + str(datetime.datetime.now()) + ".dat"
 		archivo = open(nombre_archivo, "w")
 		archivo.write(self.textoScroll1.get())
 		archivo.close()
 
 	def evento_cerrar_servidor(self):
+		''' Funcion que guarda el log actual y posteriormente cierra el servidor
+		'''
 		self.evento_guardar_log()
 		self.ventana_principal.salir()
 		self.controlador.salir()
@@ -62,14 +75,13 @@ class Boton():
 							fg=color, bg=bg, command=evento,
 							cursor="hand1")
 
-	def invocar_place(self, pos_x=100, pos_y=100):
-		self.boton.place(x=pos_x, y=pos_y)
-
 	def invocar_grid(self,fila=0,columna=0,comb_fila=1,comb_columna=1):
+		''' Funcion que dibuja en la grilla el objeto boton '''
 		self.boton.grid(row=fila, column=columna,
 						rowspan=comb_fila, columnspan=comb_columna)
 
 	def invocar_pack(self, posicion = "centro"):
+		''' Funcion que dibuja en la ventana en widget boton'''
 		if posicion == "centro" :
 			self.boton.pack()
 		elif posicion == "derecha" :
@@ -171,49 +183,63 @@ class Notificacion(Thread):
 			self.manejador_notificaciones[paquete.codigo](paquete.extra);
 
 	def mostrar_proceso_actualizacion(self, nick):
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Edicion de perfil : " + nick)
+		'''Funcion que muestra la solitud del usuario de editar su perfil '''
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" \
+												# Edicion de perfil : " + nick)
 
 	def mostrar_exito_actualizacion(self, nick):
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Perfil de " + nick + " editado exitosamente")
+		''' Funcion que muestra que el proceso de edicion fue exitoso '''
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # \
+								Perfil de " + nick + " editado exitosamente")
 
 	def mostrar_error_actualizacion(self, nick):
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Error al editar el perfil de " + nick)
+		''' funcion que muestra que ocurrio un error en el proceso de edicion'''
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 								Error al editar el perfil de " + nick)
 
 	def mostrar_desconexion(self, direccion):
 		''' Método que muestra que un usuario se ha desconectado'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # " + str(direccion) + " se ha desconectado")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 							" + str(direccion) + " se ha desconectado")
 
 	def mostrar_proceso_contacto(self, paquete):
 		''' Método que muestra el proceso de agregar o eliminar contacto '''
 		if paquete.agregar is True:
-			self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Agregar contacto: " + paquete.contacto)
+			self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+			 						# Agregar contacto: " + paquete.contacto)
 		else:
-			self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Eliminar contacto: " + paquete.contacto)
+			self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+			 							# Eliminar contacto: " + paquete.contacto)
 
 	def mostrar_mensaje_proceso(self, mensaje):
 		''' Método que informa que se recibió un paquete de mensaje '''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Paquete de Mensaje recibido")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 											Paquete de Mensaje recibido")
 
 	def mostrar_error_usuario(self, usuario):
 		''' Ḿétodo que muestra el error de inicio de sesion de un usario'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Error en inicio de sesión: " + usuario)
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 								Error en inicio de sesión: " + usuario)
 
 	def mostrar_test_conexion(self, direccion):
 		''' Método que informa que se ha recibido un paquete de test de
 			conexión de X dirección
 		'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Test de conexión - Dir: " + str(direccion))
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 							Test de conexión - Dir: " + str(direccion))
 
 	def mostrar_registro_proceso(self, usuario):
 		''' Muestra que se recibio un paquete de registro, listando los datos
 		'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Paquete Registro:\n")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 												Paquete Registro:\n")
 		self.vista.textoScroll1.insertar(usuario)
 
 	def mostrar_error_registro(self, usuario):
 		''' Metodo que informa que hubo un error en el registro de x usuario
 		'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Error en el registro: " + usuario.nick)
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 								Error en el registro: " + usuario.nick)
 
 	@staticmethod
 	def mostrar_bienvenida(self):
@@ -236,22 +262,27 @@ class Notificacion(Thread):
 
 	def mostrar_usuario_conectado(self, extra):
 		''' Método que muestra que un usuario se ha contacto '''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # " + str(extra) + " se ha conectado.")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" #\
+		 									" + str(extra) + " se ha conectado.")
 
 	def mostrar_error_conexion(self, extra):
 		''' Método que informa que  no se ha podido iniciar el servidor
 			debido a conflicto de puertos
 		'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" ### Error: Puerto ya utilizado ###")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+		 									### Error: Puerto ya utilizado ###")
 
 	def mostrar_correcta_conexion(self, extra):
 		''' Método que informa que la conexión ha sido realizada correctamente
 			ademas muestra el puerto a la escucha
 		'''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Conexión realizada exitosamente !!!")
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # Puerto en escucha: " + str(extra) + "\n")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+		 								# Conexión realizada exitosamente !!!")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+		 							# Puerto en escucha: " + str(extra) + "\n")
 
 	@staticmethod
 	def mostrar_no_hay_usuarios(self):
 		''' Método que muestra que no hay usuarios conectados '''
-		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+" # No hay usuarios conectados #")
+		self.vista.textoScroll1.insertar("\n"+str(datetime.datetime.now())+"\
+		 									# No hay usuarios conectados #")
